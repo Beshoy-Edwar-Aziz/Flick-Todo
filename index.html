@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flick ToDo is an application used to provide reminders to your never-ending busy life."
+    />
+    <meta property="og:image" content="images/bg-todo.jpg" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:image:width" content="436" />
+    <meta property="og:image:height" content="228" />
+    <meta
+      property="og:description"
+      content="Flick ToDo is an application used to provide reminders to your never-ending busy life."
+    />
+    <title>Flick Todo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section
+        class="d-flex justify-content-center w-100 align-items-center"
+      >
+        <div class="task-container bg-dark-subtle p-5 rounded w-75 shadow-lg mt-5">
+          <h1 class="lead text-center fw-bold mb-3">Flick ToDo</h1>
+          <div class="d-flex flex-column flex-lg-row gap-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Write Your Task..."
+              id="taskInput"
+            />
+            <button class="btn btn-outline-primary" id="addTask">
+              Add task
+            </button>
+          </div>
+          <span class="loader text-center"></span>
+          <div class="task-list mt-4 row">
+            
+          </div>
+        </div>
+        <div
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          class="toast position-fixed top-0 start-0"
+          data-bs-autohide="false"
+        >
+          <div class="toast-header">
+            <strong class="me-auto">Task Status</strong>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body"></div>
+        </div>
+      </section>
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
