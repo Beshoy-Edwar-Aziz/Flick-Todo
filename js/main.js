@@ -92,11 +92,11 @@ function displayTasks(taskList) {
     tasks += `
     <div class="col-12 col-lg-4">
         <div class="task-item  rounded overflow-auto bg-success p-3 my-3 d-flex justify-content-around">
-              <p class="mb-0 w-50 ${taskList[i].completed?"text-decoration-line-through":''}">
-                ${taskList[i].title}
+              <p class="mb-0 w-50 ${taskList[i]?.completed?"text-decoration-line-through":''}">
+                ${taskList[i]?.title}
               </p>
               <div class="d-flex gap-4 align-items-center">
-                <i class="fa-regular fa-circle-check complete ${taskList[i].completed?"d-none":''}"></i>
+                <i class="fa-regular fa-circle-check complete ${taskList[i]?.completed?"d-none":''}"></i>
                 <i class="fa-regular fa-trash-can delete"></i>
               </div>
             </div>
@@ -105,7 +105,7 @@ function displayTasks(taskList) {
     
   }
   taskContainer.innerHTML = tasks;
-      let taskItems= document.querySelectorAll('.task-item');
+      let taskItems= document?.querySelectorAll('.task-item');
       taskItems.forEach(e=>{
         e.style.opacity='0';
         e.style.transition='all .4s'
@@ -115,11 +115,11 @@ function displayTasks(taskList) {
       e.style.opacity='1'
     })
   }, 300);
-  let deleteBtn = document.querySelectorAll(".delete");
-  let completeBtn = document.querySelectorAll(".complete");
+  let deleteBtn = document?.querySelectorAll(".delete");
+  let completeBtn = document?.querySelectorAll(".complete");
   let id = "";
-  deleteBtn.forEach((element, index) => {
-    element.addEventListener("click", () => {
+  deleteBtn?.forEach((element, index) => {
+    element?.addEventListener("click", () => {
       id = taskList[index]._id;
       let body = {
         todoId: id,
@@ -127,7 +127,7 @@ function displayTasks(taskList) {
       deleteTask(JSON.stringify(body));
     });
   });
-  completeBtn.forEach((element, index) => {
+  completeBtn?.forEach((element, index) => {
     element.addEventListener("click", (e) => {
       console.log(index);
       id = taskList[index]._id;
