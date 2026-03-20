@@ -13,7 +13,9 @@ async function getApiKey() {
     let recievedData = await send.json();
     localStorage.setItem("Api", JSON.stringify(recievedData.apiKey));
     ApiKey = recievedData.apiKey;
+    console.log(ApiKey);
   }
+  getAllTodos();
 }
 getApiKey();
 console.log(ApiKey);
@@ -139,4 +141,3 @@ function displayTasks(taskList) {
   });
 }
 
-getAllTodos();
